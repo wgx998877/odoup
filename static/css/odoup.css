@@ -431,7 +431,9 @@ body .main-body .intro-section#intro-shanbay-forum {
   background-color: #e85c41;
   padding-bottom: 0px;
 }
-
+.visible-desktop {
+  display: inherit !important;
+}
 
 
 
