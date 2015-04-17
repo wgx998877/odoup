@@ -1,7 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-nohup.out
+
 # C extensions
 *.so
 
@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+
+#local
+sessions
+
+nohup.out

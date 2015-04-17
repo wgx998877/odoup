@@ -3,7 +3,6 @@
 
 from pymongo import MongoClient
 import config
-import web
 import logging
 logging.basicConfig()
 
@@ -107,6 +106,8 @@ class User(Base):
       return None
     try:
       result = list(self.db.find(userinfo))
+      if len(result) == 0:
+        return None
       return result
     except:
       return None
@@ -120,7 +121,7 @@ class User(Base):
       return False
 
   def signIn(self, userinfo):
-    if not isinstance(userinfo):
+    if not isinstance(userinfo, dict):
       return False
     if 'username' not in userinfo or 'password' not in userinfo:
       return False

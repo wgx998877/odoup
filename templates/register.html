@@ -16,8 +16,45 @@
 <div class="container main-body">
     <div id="reg-form"  style="display: block;">
         <div class="row">
-            <div class="reg-box account-box span6"><p class="form-title visible-desktop" style="text-align: center">     注册 </p> <p class="form-title hidden-desktop" style="text-align: center">     加入OdOup网 </p> <form action="/accounts/register/?ref_code=None" method="POST" class="account-form" id="regform"> <input type="hidden" name="csrfmiddlewaretoken" value="VboMInPLNrWdF4LWhbC5Kli2QHOus0Yb">     <div>         <p><label for="id_username">用户名：</label> <input class="required span5 text-input" id="id_username" maxlength="30" name="username" placeholder="只能包含字母，数字，下划线" type="text"><span class="add-on-icon visible-desktop"><i class="icon-user"></i></span></p> <p><label for="id_email">Email 地址：</label> <input class="required span5 text-input" id="id_email" maxlength="75" name="email" placeholder="你会收到一封验证邮件" type="text" autocomplete="off"><span class="add-on-icon visible-desktop"><i class="icon-envelope"></i></span></p> <p><label for="id_password1">密码：</label> <input class="required span5 text-input" id="id_password1" name="password1" placeholder="请输入密码" type="password"><span class="add-on-icon visible-desktop"><i class="icon-lock"></i></span></p> <p><label for="id_password2">再次输入密码：</label> <input class="required span5 text-input" id="id_password2" name="password2" placeholder="请再次输入密码" type="password"><span class="add-on-icon visible-desktop"><i class="icon-lock"></i></span></p> <p><label for="id_captcha_1">验证码：</label>        <input class="text-input" id="id_captcha_0" name="captcha_0" placeholder="不区分大小写，点击图片换一幅" type="hidden" value="2cb20c983c2e5117f3e2b7012bd096c6b54b3942"> <input class="text-input" id="id_captcha_1" name="captcha_1" placeholder="不区分大小写，点击图片换一幅" type="text"><span class="hide icon-ok"></span><span class="hide icon-remove"></span><img src="/captcha/image/2cb20c983c2e5117f3e2b7012bd096c6b54b3942/" alt="captcha" class="captcha">
-  </p> <p><label for="id_agree" style="display: inline;">我已阅读并同意OdOup网的<a href="/help/about/agreement">使用协议</a>：</label> <input id="id_agree" name="agree" type="checkbox"></p>     </div>     <div class="login-buttons">         <button type="submit" class="btn btn-large btn-success" id="button-submit" disabled="disabled">注册</button>         <input id="error-msg" type="hidden" value="Email addresses seldom begin with www, are you sure it is what you mean?">         <input id="error-domain" type="hidden" value="The domain name of your email address does not seem proper, and it may not be able to receive the activation email from Shanbay.">     </div> </form></div>
+            <div class="reg-box account-box span6">
+                <p class="form-title visible-desktop" style="text-align: center">     注册 </p> 
+                <p class="form-title hidden-desktop" style="text-align: center">     加入OdOup网 </p> 
+                <form action="/register" method="POST" class="account-form" id="regform">   
+                    <div>         
+                        <p><label for="id_username">用户名：</label> 
+                            <input class="required span5 text-input" id="id_username" maxlength="30" name="username" placeholder="只能包含字母，数字，下划线" type="text">
+                            <span class="add-on-icon visible-desktop"><i class="icon-user"></i></span></p> 
+                            <p><label for="id_email">Email 地址：</label> 
+                                <input class="required span5 text-input" id="id_email" maxlength="75" name="email" placeholder="你会收到一封验证邮件" type="text" autocomplete="off">
+                                <span class="add-on-icon visible-desktop">
+                                <i class="icon-envelope"></i></span>
+                            </p> 
+                            <p><label for="id_password1">密码：</label> 
+                            <input class="required span5 text-input" id="id_password1" name="password1" placeholder="请输入密码" type="password">
+                                <span class="add-on-icon visible-desktop"><i class="icon-lock"></i></span>
+                            </p> 
+                                <p><label for="id_password2">再次输入密码：</label> 
+                                    <input class="required span5 text-input" id="id_password2" name="password2" placeholder="请再次输入密码" type="password"><span class="add-on-icon visible-desktop"><i class="icon-lock"></i>
+                                </span></p> 
+                                <p>
+                                <label for="id_captcha_1">验证码：</label>        
+                                    <input class="text-input" id="id_captcha_0" name="captcha_0" placeholder="不区分大小写，点击图片换一幅" type="hidden" value="2cb20c983c2e5117f3e2b7012bd096c6b54b3942">
+                                    <input class="text-input" id="id_captcha_1" name="captcha_1" placeholder="不区分大小写，点击图片换一幅" type="text">
+                                    <span class="hide icon-ok"></span>
+                                    <span class="hide icon-remove"></span>
+                                    <img src="/captcha/image/2cb20c983c2e5117f3e2b7012bd096c6b54b3942/" alt="captcha" class="captcha">
+                                </p> 
+                                <p>
+                                <label for="id_agree" style="display: inline;">我已阅读并同意OdOup网的<a href="/help/about/agreement">使用协议</a>：
+                                </label> 
+                                <input id="id_agree" name="agree" type="checkbox"></p>     </div>     
+                                <div class="login-buttons">         
+                                <button type="submit" class="btn btn-large btn-success" id="button-submit">注册</button>   
+                                <input id="error-msg" type="hidden" value="Email addresses seldom begin with www, are you sure it is what you mean?">
+                                <input id="error-domain" type="hidden" value="The domain name of your email address does not seem proper, and it may not be able to receive the activation email from Shanbay.">     
+                                </div> 
+                                </form>
+                            </div>
             <div class="span6 social-login-box visible-desktop">
                 
 <div class="row">

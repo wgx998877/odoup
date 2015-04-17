@@ -45,11 +45,10 @@ class login:
     return render.login()
 
   def POST(self):
-    postdata = web.input()
+    postdata = web.input(username='', password='')
     username = web.net.websafe(postdata.username)
     password = web.net.websafe(postdata.password)
     userlist = user.get_user({'username':username})
-    print userlist
     if userlist is None:
       return 'no user'
     u = userlist[0]
@@ -57,8 +56,8 @@ class login:
       return 'password error'
     else:
       if user.signIn({'username':username,'password':password}):
-        return True
-      return False
+        return web.seeother('/index')
+      return 'system error'
 
 class logout:
   def POST(self):
@@ -66,38 +65,29 @@ class logout:
     return render.logout()
 
 class register:
-  vusername= form.regexp(r".{3,20}$", '用户名长度为3-20位')
-  vpass = form.regexp(r".{6,20}$", '密码长度为6-20位')
-  vemail = form.regexp(r".*@.*", "must be a valid email address")
-  regForm=web.form.Form(
-        form.Textbox('username',vusername,description=u'用户名'),
-        form.Password("password",vpass,description=u"密码"),
-        form.Password("password2", description=u"确认密码"),
-        form.Button(u"马上注册", type="submit", description="submit"),
-        validators = [
-            form.Validator("两次输入的密码不一致", lambda i: i.password == i.password2)]
-        )
   def GET(self):
       return render.register()
 
   def POST(self):
       formdata = web.input()
-      username = web.net.websafe(formdata.username)
-      password = web.net.websafe(formdata.password)
-      regip = web.ctx.ip
-      regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-      if not self.regForm.validates():
-        return render.register()
+      print formdata
+      if 'username' not in formdata:
+        return 'no username'
       else :
+        username = web.net.websafe(formdata.username)
+        password = web.net.websafe(formdata.password1)
+        email = web.net.websafe(formdata.email)
+        regip = web.ctx.ip
+        regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
         if user.get_user({'username':username}) is not None:
-          return render.register()
+          return 'user exits'
         else:
-          u = {
-              'username':username,
-              'password':password,
-              'regip'   :regip,
-              'regdate' :regdate,
-          }
+          u = {}
+          u['username'] = username
+          u['password'] = password
+          u['email'] = email
+          u['regip'] = regip
+          u['regdate'] = regdate
           if user.add_user(u):
             return web.seeother('/start')
           else:
@@ -134,9 +124,11 @@ class get_userlist:
   def GET(self):
     query = {}
     result = user.get_user(query)
+    if result is None:
+        return ''
     for i in result:
       i['_id'] = str(i['_id'])
-    result = {
+      result = {
         'count' : len(result),
         'userlist' : result
         }
