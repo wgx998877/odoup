@@ -66,52 +66,50 @@ class logout:
 
 class register:
   def GET(self):
-      return render.register()
+    return render.register()
 
   def POST(self):
-      formdata = web.input()
-      print formdata
-      if 'username' not in formdata:
-        return 'no username'
-      else :
-        username = web.net.websafe(formdata.username)
-        password = web.net.websafe(formdata.password1)
-        email = web.net.websafe(formdata.email)
-        regip = web.ctx.ip
-        regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        if user.get_user({'username':username}) is not None:
-          return 'user exits'
+    formdata = web.input()
+    print formdata
+    if 'username' not in formdata:
+      return 'no username'
+    else :
+      username = web.net.websafe(formdata.username)
+      password = web.net.websafe(formdata.password1)
+      email = web.net.websafe(formdata.email)
+      regip = web.ctx.ip
+      regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+      if user.get_user({'username':username}) is not None:
+        return 'user exits'
+      else:
+        u = {}
+        u['username'] = username
+        u['password'] = password
+        u['email'] = email
+        u['regip'] = regip
+        u['regdate'] = regdate
+        if user.add_user(u):
+          return web.seeother('/start')
         else:
-          u = {}
-          u['username'] = username
-          u['password'] = password
-          u['email'] = email
-          u['regip'] = regip
-          u['regdate'] = regdate
-          if user.add_user(u):
-            return web.seeother('/start')
-          else:
-            return u'Register Failed!'
-      return None
+          return u'Register Failed!'
+    return None
 
 
 class start:
 
-	def GET(self):
-		return render.start()
-		#return "hello, world"
+  def GET(self):
+    return render.start()
 
 class study:
 
-	def GET(self):
-		return render.study()
-		#return "hello, world"
+  def GET(self):
+    q = question.get_question()['result'][0]
+    return render.study(question=q)
 
 class guide:
 
-	def GET(self):
-		return render.guide()
-		#return "hello, world"
+  def GET(self):
+	return render.guide()
 
 class get_question:
   def GET(self):

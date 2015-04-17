@@ -37,16 +37,13 @@
 		      </div>
               <div class="col-xs-6">
               <div class="tile">
-            <h3 class="tile-title">高二物理-动量守恒</h3>
-            <p>在匀速行驶的船上，当船上的人相对于船竖直向上抛出一个物体时，船的速度将（水的阻力不变）</p>
+            <h3 class="tile-title">{{ question.title }}</h3>
+            <p>{{ question.content }}</p>
 <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-      <button type="button" class="btn btn-default">A.变大</button>
-      <button type="button" class="btn btn-default">B.变小</button>
+      {% for i in question.option %}
+      <button type="button" class="btn btn-default">{{ i }}</button>
       
-      <button type="button" class="btn btn-default">C.不变</button>
-      <button type="button" class="btn btn-default">D.先变大再变小</button>
-      
-      
+      {% endfor %}
     </div>
           </div>
 		      </div>

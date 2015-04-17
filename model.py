@@ -17,7 +17,7 @@ class Question(Base):
 
   def __init__(self):
     super(Question, self).__init__()
-    self.db = self.conn.question
+    self.db = self.conn.questions
 
   def save_question(self, question):
     if not isinstance(question, dict):
