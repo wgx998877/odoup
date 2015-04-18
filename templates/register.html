@@ -1,93 +1,93 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>OdOup</title>
+{% extends "base.html" %}
+{% block title%}注册{% endblock %}
+{% block content%}
+      <div id="legend" class="">
+        <legend class="">欢迎加入 OdOup </legend>
+      </div>
+  <form class="form-horizontal">
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-5">
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-5">
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-3 control-label">Password Confirm</label>
+        <div class="col-sm-5">
+          <input type="pasword_confirm" class="form-control" id="pasword_confirm" placeholder="Password Confirm">
+        </div>
+      </div>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <div class="form-group">
+          <label class="col-sm-3 control-label">Provinces or cities</label>
+        <div class="col-sm-5">
+            <select class="form-control">
+      <option>北京市</option>
+      <option>上海市</option>
+      <option>广东-广州市</option>
+      <option>辽宁-沈阳市</option></select>
+          </div>
+          </div>
+          
+<div class="form-group">
 
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+          <!-- Select Basic -->
+          <label class="col-sm-3 control-label">School</label>
+        <div class="col-sm-5">
+            <select class="form-control">
+      <option>北京一中</option>
+      <option>北京二中</option>
+      <option>北京明光高中</option></select>
+          </div>
 
-    <!-- Loading Flat UI -->
-    <link href="static/css/flat-ui.css" rel="stylesheet">
-    <link href="static/css/odoup.css" rel="stylesheet">
-</head>
-<body>
-<div class="container main-body">
-    <div id="reg-form"  style="display: block;">
-        <div class="row">
-            <div class="reg-box account-box span6">
-                <p class="form-title visible-desktop" style="text-align: center">     注册 </p> 
-                <p class="form-title hidden-desktop" style="text-align: center">     加入OdOup网 </p> 
-                <form action="/register" method="POST" class="account-form" id="regform">   
-                    <div>         
-                        <p><label for="id_username">用户名：</label> 
-                            <input class="required span5 text-input" id="id_username" maxlength="30" name="username" placeholder="只能包含字母，数字，下划线" type="text">
-                            <span class="add-on-icon visible-desktop"><i class="icon-user"></i></span></p> 
-                            <p><label for="id_email">Email 地址：</label> 
-                                <input class="required span5 text-input" id="id_email" maxlength="75" name="email" placeholder="你会收到一封验证邮件" type="text" autocomplete="off">
-                                <span class="add-on-icon visible-desktop">
-                                <i class="icon-envelope"></i></span>
-                            </p> 
-                            <p><label for="id_password1">密码：</label> 
-                            <input class="required span5 text-input" id="id_password1" name="password1" placeholder="请输入密码" type="password">
-                                <span class="add-on-icon visible-desktop"><i class="icon-lock"></i></span>
-                            </p> 
-                                <p><label for="id_password2">再次输入密码：</label> 
-                                    <input class="required span5 text-input" id="id_password2" name="password2" placeholder="请再次输入密码" type="password"><span class="add-on-icon visible-desktop"><i class="icon-lock"></i>
-                                </span></p> 
-                                <p>
-                                <label for="id_captcha_1">验证码：</label>        
-                                    <input class="text-input" id="id_captcha_0" name="captcha_0" placeholder="不区分大小写，点击图片换一幅" type="hidden" value="2cb20c983c2e5117f3e2b7012bd096c6b54b3942">
-                                    <input class="text-input" id="id_captcha_1" name="captcha_1" placeholder="不区分大小写，点击图片换一幅" type="text">
-                                    <span class="hide icon-ok"></span>
-                                    <span class="hide icon-remove"></span>
-                                    <img src="/captcha/image/2cb20c983c2e5117f3e2b7012bd096c6b54b3942/" alt="captcha" class="captcha">
-                                </p> 
-                                <p>
-                                <label for="id_agree" style="display: inline;">我已阅读并同意OdOup网的<a href="/help/about/agreement">使用协议</a>：
-                                </label> 
-                                <input id="id_agree" name="agree" type="checkbox"></p>     </div>     
-                                <div class="login-buttons">         
-                                <button type="submit" class="btn btn-large btn-success" id="button-submit">注册</button>   
-                                <input id="error-msg" type="hidden" value="Email addresses seldom begin with www, are you sure it is what you mean?">
-                                <input id="error-domain" type="hidden" value="The domain name of your email address does not seem proper, and it may not be able to receive the activation email from Shanbay.">     
-                                </div> 
-                                </form>
-                            </div>
-            <div class="span6 social-login-box visible-desktop">
-                
-<div class="row">
-    <div class="span3">
-        <div class="social-login-div social-login-sina-weibo" href="/social/login/weibo/">
-            <a><span class="social-login-icon"><i class="icon-sina-weibo"></i></span><span class="social-login-text">新浪微博</span></a>
         </div>
-        <div class="social-login-div social-login-wechat" href="/social/login/wechat/">
-            <a><span class="social-login-icon"><i class="icon-weixin"></i></span><span class="social-login-text">微信</span></a>
+        
+        <div class="form-group">
+
+          <!-- Select Multiple -->
+          <label class="col-sm-3 control-label">Grade</label>
+        <div class="col-sm-5">
+            <select class="form-control">
+      <option>初一</option>
+      <option>初二</option>
+      <option>初三</option>
+      <option>高一</option>
+      <option>高二</option>
+      <option>高三</option></select>
+          </div>
         </div>
-        <div class="social-login-div social-login-qq" href="/social/login/qq/">
-            <a><span class="social-login-icon"><i class="icon-qq"></i></span><span class="social-login-text">QQ</span></a>
-        </div>
-    </div>
-    <div class="span3">
-        <div class="social-login-div social-login-tencent-weibo" href="/social/login/tqq/">
-            <a><span class="social-login-icon"><i class="icon-tencent-weibo"></i></span><span class="social-login-text">腾讯微博</span></a>
-        </div>
-        <div class="social-login-div social-login-renren" href="/social/login/renren/">
-            <a><span class="social-login-icon"><i class="icon-renren"></i></span><span class="social-login-text">人人</span></a>
-        </div>
-        <div class="social-login-div social-login-douban" href="/social/login/douban2/">
-            <a><span class="social-login-icon"><i class="icon-douban"></i></span><span class="social-login-text">豆瓣</span></a>
-        </div>
-    </div>
-</div>
+        
+        <div class="form-group">
+
+          <!-- Textarea -->
+          <label class="col-sm-3 control-label">Personal profile</label>
+          <div class="col-sm-5">
+                  <textarea type="" class="form-control"> </textarea>
+          </div>
+          </div>
+
+    <div class="form-group">
+
+          <!-- Appended input-->
+          <label class="col-sm-3 control-label">验证码</label>
+          <div class="col-sm-5">
+              <input class="form-control"  placeholder="" type="text">
+              <img class="featurette-image img-responsive" data-src="holder.js/150x50/auto" alt="Generic placeholder image">
 
             </div>
         </div>
-    </div>
-    </div>
-    <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/video.js"></script>
-    <script src="static/js/flat-ui.min.js"></script>
-</body>
-</html>
+  <div class="form-group center">
+      <button type="submit" class="btn btn-default">Sign Up</button>
+      <button type="submit" class="btn btn-default">Cancel</button>
+  </div>
+
+  </form>
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% block head %}
+    <title>{% block title %}{% endblock %} - OdOup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap --><!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"> 
+
+    <link href="static/css/odoup.css" rel="stylesheet">
+    {% endblock %}
+    <!-- Loading Flat UI -->
+    <!-- link href="css/flat-ui.css" rel="stylesheet" -->
+    
+  </head>
+<body>
+<div class="container">
+	<div class="row-fluid">
+		<div class="span12">
+        
+{% block nav %}
+    <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                <span class="sr-only">首页</span>
+              </button>
+              <a class="navbar-brand" href="/">OdOup</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+              <ul class="nav navbar-nav navbar-left">
+                <li><a href="/study">做题</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">小组<b class="caret"></b></a>
+                  <span class="dropdown-arrow"></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">小学</a></li>
+                    <li><a href="#">初中</a></li>
+                    <li><a href="#">高中</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">高考</a></li>
+                  </ul>
+                </li>
+                <li><a href="#fakelink">随便看看</a></li>
+                <li><a href="#fakelink">帮助</a></li>
+               </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register">注册</a></li>
+                <li><a href="/login">登录</a></li>
+                </ul>
+               <!--form class="navbar-form navbar-right" action="#" role="search">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn"><span class="fui-search"></span>搜索</button>
+                    </span>
+                  </div>
+                </div>
+              </form-->
+            </div><!-- /.navbar-collapse -->
+          </nav>
+{% endblock %}
+			<div class="row-fluid">
+				<div class="span12">
+                {% block content %}
+                {% endblock %}
+				</div>
+			</div>
+            {% block footer %}
+            <footer class="text-center bg-info">
+            <strong>&copy; OdOup, Inc.</strong>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <br /> By Beijing Normail University - Guoxin &amp; ShenMa Inc. - Zekun <br />all rights reserved.
+            </footer>
+            {% endblock %}
+        </div>
+	</div>
+</div>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="static/js/holder.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
