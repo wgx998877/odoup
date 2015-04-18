@@ -34,9 +34,9 @@ user = User(session)
 def get_userinfo():
   if user.logged():
     return user.userinfo
-   return None
-   
-   
+  return None
+
+
 class index:
 
   def GET(self):
@@ -117,7 +117,7 @@ class guide:
 
   def GET(self):
     u = get_userinfo()
-	return render.guide(user=u)
+    return render.guide(user=u)
 
 class get_question:
   def GET(self):
