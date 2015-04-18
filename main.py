@@ -129,9 +129,10 @@ class guide:
     return render.guide(user=u)
 class team:
   def GET(self):
-    return render.team()
-    
-    
+    t = {}
+    return render.team(team=t)
+
+
 class get_question:
   def GET(self):
     query = {}

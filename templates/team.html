@@ -42,13 +42,14 @@
                             </div>
                             <div class="">
                                 <p>{{t.profile.title}}</p>
-                                <p>{{t.profile.content}</p>
+                                <p>{{t.profile.content}}</p>
                             </div>
                         </div>
                     </div>
                     </div>
                 </div>
               </div>
+              {% endfor %}
               <div class="team_page">
                 <h2>最新小组</h2><p><a href="/team_detail">更多</a></p>
                 {% for t in team.new_team  %}
@@ -71,7 +72,7 @@
                             </div>
                             <div class="">
                                 <p>{{t.profile.title}}</p>
-                                <p>{{t.profile.content}</p>
+                                <p>{{t.profile.content}}</p>
                             </div>
                         </div>
                     </div>
