@@ -31,21 +31,23 @@ session = web.session.Session(app, web.session.DiskStore('sessions'),initializer
 question = Question()
 user = User(session)
 
-
+def get_userinfo():
+  if user.logged():
+    return user.userinfo
+   return None
+   
+   
 class index:
 
   def GET(self):
-    if user.logged():
-      u = user.userinfo
-    else:
-      u = None
+    u = get_userinfo()
     return render.index(user=u)
 
 class login:
 
   def GET(self):
     if user.logged():
-      return render.index(user=user.userinfo)
+      return web.seeother('/index')
     return render.login()
 
   def POST(self):
@@ -70,7 +72,8 @@ class logout:
 
 class register:
   def GET(self):
-    return render.register()
+    u = get_userinfo()
+    return render.register(user=u)
 
   def POST(self):
     formdata = web.input()
@@ -100,18 +103,21 @@ class register:
 class start:
 
   def GET(self):
-    return render.start()
+    u = get_userinfo()
+    return render.start(user=u)
 
 class study:
 
   def GET(self):
+    u = get_userinfo()
     q = question.get_question()['result'][0]
-    return render.study(question=q)
+    return render.study(user=u, question=q)
 
 class guide:
 
   def GET(self):
-	return render.guide()
+    u = get_userinfo()
+	return render.guide(user=u)
 
 class get_question:
   def GET(self):
