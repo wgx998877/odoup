@@ -20,6 +20,7 @@ urls = (
 	'/start', 'start',
 	'/study', 'study',
 	'/guide', 'guide',
+    '/team' , 'team',
   '/get_question', 'get_question',
   '/get_userlist', 'get_userlist',
 )
@@ -83,6 +84,9 @@ class register:
     else :
       username = web.net.websafe(formdata.username)
       password = web.net.websafe(formdata.password1)
+      city = web.net.websafe(formdata.city)
+      school = web.net.websafe(formdata.school)
+      profile = web.ent.websafe(formdata.profile)
       regip = web.ctx.ip
       regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
       if user.get_user({'username':username}) is not None:
@@ -123,7 +127,11 @@ class guide:
   def GET(self):
     u = get_userinfo()
     return render.guide(user=u)
-
+class team:
+  def GET(self):
+    return render.team()
+    
+    
 class get_question:
   def GET(self):
     query = {}

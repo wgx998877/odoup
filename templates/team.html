@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title%}开始{% endblock %}
+{% block content%}
+<h1 class="text-center">OdOup</h1>
+<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
+<div class="row">
+              <div class="col-md-8">
+                <div class="head_img text-center">
+                    <h1>OdOup 小组<h1>
+                    <h3>加入小组，一起学习</h3>
+                </div>
+                
+               <form class="navbar-form navbar-right" action="#" role="search">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn"><span class="fui-search"></span>搜索</button>
+                    </span>
+                  </div>
+                </div>
+              </form>
+              <div class="team_page">
+                <h2>热门小组</h2><p><a href="/team_detail">更多</a></p>
+                {% for t in team.hot_team  %}
+                <div class="team_show">
+                    <div class="team_show_head">
+                    <h1>{{ t.name }}</h1>
+                    <div class="team_show_head_right">
+                        <p>组长:<a href={{t.leader.url}}>{{ t.leader.name }} 创建时间：{{t.start_time}}</p>
+                    </div>
+                    <div class="team_show_body row">
+                        <div class="col-md-3 team_image">
+                            <img src="{{t.img_url}}"></img>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="">
+                                <span>周排名:{{t.week_rank}}</span>
+                                <span>成员数:{{t.member_num}}</span>
+                                <span>打卡率:{{t.card_radio}}</span>
+                                <span>成长值:{{t.points}}</span>
+                            </div>
+                            <div class="">
+                                <p>{{t.profile.title}}</p>
+                                <p>{{t.profile.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              <div class="team_page">
+                <h2>最新小组</h2><p><a href="/team_detail">更多</a></p>
+                {% for t in team.new_team  %}
+                <div class="team_show">
+                    <div class="team_show_head">
+                    <h1>{{ t.name }}</h1>
+                    <div class="team_show_head_right">
+                        <p>组长:<a href={{t.leader.url}}>{{ t.leader.name }} 创建时间：{{t.start_time}}</p>
+                    </div>
+                    <div class="team_show_body row">
+                        <div class="col-md-3 team_image">
+                            <img src="{{t.img_url}}"></img>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="">
+                                <span>周排名:{{t.week_rank}}</span>
+                                <span>成员数:{{t.member_num}}</span>
+                                <span>打卡率:{{t.card_radio}}</span>
+                                <span>成长值:{{t.points}}</span>
+                            </div>
+                            <div class="">
+                                <p>{{t.profile.title}}</p>
+                                <p>{{t.profile.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+              {% endfor %}
+              <div class="col-md-4">
+                <h4><a href="">申请创建小组</a></h4> 
+                <div class="team_rank">
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><a href="#">周排名</a></li>
+                  <li role="presentation"><a href="#">总排名</a></li>
+                </ul>
+                <div class="team_rank_content">
+                <div>
+              </div>
+</div>
+              {% endblock %}
