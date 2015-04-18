@@ -24,18 +24,17 @@
 		      </div>
               <div class="col-xs-6">
               <div class="tile">
-            <h3 class="tile-title">{{ question.title }} {{question.question_type}}</h3>
-            <h3>考点:{{ question.exam_point }}</h3>
+            <h3 class="tile-title">{{ question.title }}</h3>
             <h4>题目:</h4>
             <p>{{ question.content }}</p>
 <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-      {% for i in question.option_list %}
+      {% for i in question.option %}
       <button type="button" class="btn btn-default">{{ i }}</button>
       
       {% endfor %}
       <h4>答案</h4>
-      <p>{{ question.answer }}</p>
-      <p>{{ question.analysis }}</p>
+      <p>{{ question.answer.correct }}</p>
+      <p>{{ question.answer.explan }}</p>
       
     </div>
           </div>

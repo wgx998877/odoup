@@ -110,7 +110,12 @@ class study:
 
   def GET(self):
     u = get_userinfo()
-    q = question.get_question()['result'][0]
+    query = web.input(id=0)
+    try:
+      i = int(query.id)
+      q = question.get_question()['result'][i]
+    except:
+      q = question.get_question()['result'][0]
     return render.study(user=u, question=q)
 
 class guide:
