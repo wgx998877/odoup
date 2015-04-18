@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block title%}开始{% endblock %}
 {% block content%}
-<h1 class="text-center">OdOup</h1>
-<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
 <div class="row">
               <div class="col-md-8">
                 <div class="head_img text-center">
@@ -48,8 +46,8 @@
                     </div>
                     </div>
                 </div>
-              </div>
               {% endfor %}
+              </div>
               <div class="team_page">
                 <h2>最新小组</h2><p><a href="/team_detail">更多</a></p>
                 {% for t in team.new_team  %}
@@ -78,9 +76,9 @@
                     </div>
                     </div>
                 </div>
-              </div>
-              </div>
               {% endfor %}
+              </div>
+              </div>
               <div class="col-md-4">
                 <h4><a href="">申请创建小组</a></h4> 
                 <div class="team_rank">
@@ -89,7 +87,9 @@
                   <li role="presentation"><a href="#">总排名</a></li>
                 </ul>
                 <div class="team_rank_content">
-                <div>
+                </div>
               </div>
+      </div>
+
 </div>
               {% endblock %}
