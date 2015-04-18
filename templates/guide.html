@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>OdOup</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Loading Flat UI -->
-    <link href="static/css/flat-ui.css" rel="stylesheet">
-    <link href="static/css/odoup.css" rel="stylesheet">
-</head>
-<body>
-<div class="container">
+{% extends "base.html" %}
+{% block title%}开始{% endblock %}
+{% block content%}
 <div class="panel-group" role="tablist">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
@@ -63,31 +50,6 @@
         </ul>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="collapseListGroupHeading4">
-        <h4 class="panel-title" id="-collapsible-list-group-">
-          <a class="" data-toggle="collapse" href="#collapseListGroup4" aria-expanded="true" aria-controls="collapseListGroup4">
-            测试
-          </a>
-        <a class="anchorjs-link" href="#-collapsible-list-group-"><span class="anchorjs-icon"></span></a></h4>
-      </div>
-      <div id="collapseListGroup4" class="panel-collapse collapse in" role="tabpane4" aria-labelledby="collapseListGroupHeading4" aria-expanded="true">
-        <ul class="list-group">
-          <li class="list-group-item"><label class="radio">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-            语文
-          </label></li>
-          <li class="list-group-item"><a><label class="checkbox" for="checkbox1">
-            <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-            数学
-          </label></li>
-          <li class="list-group-item"><label class="checkbox" for="checkbox2">
-            <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox" class="custom-checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-            英语
-          </label></li>
-        </ul>
-      </div>
-    </div>
   </div>
   <div class="progress">
             <div class="progress-bar" style="width: 45%;"></div>
@@ -95,8 +57,4 @@
   <a href="#fakelink" class="btn btn-block btn-lg btn-primary">选好了</a>
   <a href="#fakelink" class="btn btn-block btn-lg btn-default">取消</a>
     </div>
-    <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/video.js"></script>
-    <script src="static/js/flat-ui.min.js"></script>
-</body>
-</html>
+              {% endblock %}

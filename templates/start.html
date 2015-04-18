@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>OdOup</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Loading Flat UI -->
-    <link href="static/css/flat-ui.css" rel="stylesheet">
-    <link href="static/css/odoup.css" rel="stylesheet">
-</head>
-<body>
-<div class="container main-body">
+{% extends "base.html" %}
+{% block title%}开始{% endblock %}
+{% block content%}
 <h1 class="text-center">OdOup</h1>
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
 <div class="row text-center">
@@ -38,17 +25,13 @@
               <div class="col-xs-3">
               <div class="tile">
               <img src="static/img/icons/svg/pencils.svg" alt="Pensils">
-            <h3 class="tile-title">Color Swatches</h3>
-            <p>Easy to add or change elements. </p>
+            <h3 class="tile-title">准备好了吗</h3>
+            <p>测试就要开始了</p>
           <a href="#fakelink" class="btn btn-block btn-lg btn-primary">开始答题</a>
           </div>
 		      </div>
               <div class="col-xs-3">
         </div>
               </div>
-    </div>
-    <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/video.js"></script>
-    <script src="static/js/flat-ui.min.js"></script>
-</body>
-</html>
+              
+              {% endblock %}

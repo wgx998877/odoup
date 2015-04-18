@@ -15,6 +15,7 @@ urls = (
 	'/' , 'index',
 	'/index', 'index',
 	'/login', 'login',
+	'/logout', 'logout',
 	'/register', 'register',
 	'/start', 'start',
 	'/study', 'study',
@@ -34,14 +35,17 @@ user = User(session)
 class index:
 
   def GET(self):
-		return render.index()
-		#return "hello, world"
+    if user.logged():
+      u = user.userinfo
+    else:
+      u = None
+    return render.index(user=u)
 
 class login:
 
   def GET(self):
     if user.logged():
-      return user.userinfo
+      return render.index(user=user.userinfo)
     return render.login()
 
   def POST(self):
@@ -60,9 +64,9 @@ class login:
       return 'system error'
 
 class logout:
-  def POST(self):
+  def GET(self):
     user.logout()
-    return render.logout()
+    return web.seeother('/index')
 
 class register:
   def GET(self):
@@ -76,7 +80,6 @@ class register:
     else :
       username = web.net.websafe(formdata.username)
       password = web.net.websafe(formdata.password1)
-      email = web.net.websafe(formdata.email)
       regip = web.ctx.ip
       regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
       if user.get_user({'username':username}) is not None:
@@ -85,7 +88,6 @@ class register:
         u = {}
         u['username'] = username
         u['password'] = password
-        u['email'] = email
         u['regip'] = regip
         u['regdate'] = regdate
         if user.add_user(u):
