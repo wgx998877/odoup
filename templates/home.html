@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block title%}{{user.username}}{% endblock %}
+{% block content%}
+<div class="row">
+	<div class="col-md-4">
+		<div class="person_info">
+          <img class="featurette-image img-responsive center-block pull-left" data-src="holder.js/200x200/auto" alt="Generic placeholder image"/>
+			<h2 >{{user.username}}</h2>
+		</div>
+		<hr/>
+		<div class="person_setting_btn">
+			<div class="btn-group" role="group" aria-label="...">
+				<button type="button" class="btn btn-default">短信 <span class="badge">42</span></button>
+				<button type="button" class="btn btn-default">排名</button>
+				<button type="button" class="btn btn-default">修改</button>
+			</div>
+		</div>
+				<hr/>
+		<div class="person_setting_list">
+		<nav class="">
+            <ul class="nav">
+              
+                <li>
+				  <a href="#overview">OdOup小组</a>
+				  <ul class="nav">
+				    <li><a href="#overview-doctype">我的OdOup <span class="badge">4</span></a></li>
+				    <li><a href="#overview-mobile">收藏小组</a></li>
+				    <li><a href="#overview-type-links">最新OdOup</a></li>
+				  </ul>
+				</li>
+				<hr/>
+				<li>
+				  <a href="#grid">移动OdOup</a>
+				  <ul class="nav">
+				    <li><a href="#grid-intro">OdOup客户端</a></li>
+				    <li><a href="#grid-media-queries">OdOup轻应用</a></li>
+				  </ul>
+				</li>
+				<hr/>
+				<li>
+				  <a href="#grid">帮助</a>
+				  <ul class="nav">
+				    <li><a href="#grid-intro">关注我们</a></li>
+						  <ul class=".collapse">
+						    <li><a href="#grid-intro">新浪微博</a></li>
+						    <li><a href="#grid-media-queries">微信公共号</a></li>
+						    <li><a href="#grid-media-queries">人人网</a></li>
+						    <li><a href="#grid-intro">QQ空间</a></li>
+						  </ul>
+				    <li><a href="#grid-media-queries">联系我们</a></li>
+				    <li><a href="#grid-intro">关于我们</a></li>
+				  </ul>
+				</li>
+            </ul>
+          </nav>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="person_content">
+			<h3><a href="#">我的错题</a></h3>
+            <div id="graphic" class="es">
+                <div id="main1" class="main" style="height:400px"></div>
+            </div><!--/span-->
+			<hr/>
+			<h3><a href="#">综合测评</a></h3>
+            <div id="graphic" class="es">
+                <div id="main2" class="main" style="height:400px"></div>
+            </div><!--/span-->
+			<hr/>
+			<h3><a href="#">努力指数</a></h3>
+            <div id="graphic" class="es">
+                <div id="main3" class="main" style="height:400px"></div>
+            </div><!--/span-->
+			<hr/>
+			<h3><a href="#">进步曲线</a></h3>
+            <div id="graphic" class="es">
+                <div id="main4" class="main" style="height:400px"></div>
+            </div><!--/span-->
+			<hr/>
+		</div>
+		<hr/>
+		<div class="person_content">
+			<h3><a href="#">学习记录</a></h3>
+			<table class="table table-hover text-center">
+		        <thead>
+		          <tr>
+		            <th>#</th>
+		            <th>日期</th>
+		            <th>学科</th>
+		            <th>开始时间</th>
+		            <th>结束时间</th>
+		            <th>答题数</th>
+		            <th>正确率</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		          <tr>
+		            <th scope="row">1</th>
+		            <td>1月1日</td>
+		            <td>高三英语</td>
+		            <td>10:30:11</td>
+		            <td>12:20:12</td>
+		            <td>87</td>
+		            <td>56%</td>
+		          </tr>
+		          <tr>
+		            <th scope="row">2</th>
+		            <td>1月2日</td>
+		            <td>高三物理</td>
+		            <td>10:20:11</td>
+		            <td>12:26:12</td>
+		            <td>87</td>
+		            <td>56%</td>
+		          </tr>
+		          <tr>
+		            <th scope="row">3</th>
+		            <td>1月3日</td>
+		            <td>高三化学</td>
+		            <td>10:33:11</td>
+		            <td>12:22:12</td>
+		            <td>87</td>
+		            <td>56%</td>
+		          </tr>
+		        </tbody>
+			</table>
+		</div>
+	</div>
+
+    <script src="static/js/echarts/dist/echarts.js"></script>
+    <script src="static/js/mycharts.js"></script>
+</div>
+{% endblock %}

@@ -20,7 +20,8 @@ urls = (
 	'/start', 'start',
 	'/study', 'study',
 	'/guide', 'guide',
-    '/team' , 'team',
+  '/team' , 'team',
+  '/home' , 'home',
   '/get_question', 'get_question',
   '/get_userlist', 'get_userlist',
 )
@@ -127,10 +128,17 @@ class guide:
   def GET(self):
     u = get_userinfo()
     return render.guide(user=u)
+
 class team:
   def GET(self):
     t = {}
-    return render.team(team=t)
+    u = get_userinfo()
+    return render.team(user=u, team=t)
+
+class home:
+  def GET(self):
+    u = get_userinfo()
+    return render.home(user=u)
 
 
 class get_question:
