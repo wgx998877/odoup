@@ -127,10 +127,12 @@ class guide:
   def GET(self):
     u = get_userinfo()
     return render.guide(user=u)
+
 class team:
   def GET(self):
     t = {}
-    return render.team(team=t)
+    u = get_userinfo()
+    return render.team(user=u, team=t)
 
 
 class get_question:
