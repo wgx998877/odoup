@@ -793,3 +793,22 @@ ol.linenums {
   width: 140px;
   margin-left: 20px;
   }
+
+/* start
+*
+*/
+.notice {
+  padding: 20px;
+  border:1px solid #DDDDDD;
+  box-shadow:0 0 10px #F1F1F1;
+}
+
+.job_panel {
+  cursor: pointer;
+  background: #F2F2F2;
+  margin: 15px;
+  height:260px;
+  width:270px;
+  box-shadow:0 0 5px #F1F1F1;
+  border:1px solid #DDDDDD;
+}

@@ -1,12 +1,118 @@
 {% extends "base.html" %}
 {% block title%}开始{% endblock %}
 {% block content%}
+<div class="notice" style="height:150px;background:#F1F1F1;">
+  <button class="pull-right" onclick="$('.notice').hide('normal');">close</button>
+  <p>你今日还有100道语文题没做，<a href="#">点击进入</a>查看</p>
+  <p>你今日还有100道数学题没做，<a href="#">点击进入</a>查看</p>
+  <p>你今日还有100道英语题没做，<a href="#">点击进入</a>查看</p>
+  <p>你今日还有100道化学题没做，<a href="#">点击进入</a>查看</p>
+</div>
+<div class="container-fluid  text-center">
+  <div class="">
+    <h1 class="text-left">学科任务</h1>
+    <hr/>
+    <div class="col-md-4 job_panel" onclick="location.href='#';"> 
+      <h2>数学</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+    </div>
+    <div class="col-md-4 job_panel">
+      <h2>语文</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+      </div>
+    <div class="col-md-4 job_panel">
+      <h2>英语</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <h1 class="text-left">小组任务</h1>
+    <hr/>
+    <div class="col-md-4 job_panel">
+      <h2>数学</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+    </div>
+    <div class="col-md-4 job_panel">
+      <h2>语文</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+      </div>
+    <div class="col-md-4 job_panel">
+      <h2>英语</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <h1 class="text-left">个人任务</h1>
+    <hr/>
+    <div class="col-md-4 job_panel">
+      <h2>数学</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+    </div>
+    <div class="col-md-4 job_panel">
+      <h2>语文</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+      </div>
+    <div class="col-md-4 job_panel">
+      <h2>英语</h2>
+      <p><a href="#">查看计划</a></p>
+      <p>共30题，已完成14题</p>
+      <hr/>
+      <div class="">
+          <a href="/study" class="btn btn-block btn-lg btn-default">开始答题</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<!-- old
 <h1 class="text-center">OdOup</h1>
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
 <div class="row text-center">
               <div class="col-xs-3">
 <div class="pallete-item ">
-			      <dl class="palette palette-peter-river">
+            <dl class="palette palette-peter-river">
               <dt>今日任务</dt>
               <dd>高中物理</dd>
             </dl>
@@ -20,8 +126,8 @@
               <dd>力学 1/30</dd>
                   <img src="static/img/icons/svg/clipboard.svg" alt="Clipboard">
             </dl>
-		      </div>
-		      </div>
+          </div>
+          </div>
               <div class="col-xs-3">
               <div class="tile">
               <img src="static/img/icons/svg/pencils.svg" alt="Pensils">
@@ -29,9 +135,8 @@
             <p>测试就要开始了</p>
           <a href="/study" class="btn btn-block btn-lg btn-primary">开始答题</a>
           </div>
-		      </div>
+          </div>
               <div class="col-xs-3">
         </div>
               </div>
-              
-              {% endblock %}
+-->       
