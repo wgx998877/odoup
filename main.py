@@ -20,7 +20,8 @@ urls = (
 	'/start', 'start',
 	'/study', 'study',
 	'/guide', 'guide',
-    '/team' , 'team',
+  '/team' , 'team',
+  '/home' , 'home',
   '/get_question', 'get_question',
   '/get_userlist', 'get_userlist',
 )
@@ -86,18 +87,23 @@ class register:
       password = web.net.websafe(formdata.password1)
       city = web.net.websafe(formdata.city)
       school = web.net.websafe(formdata.school)
-      profile = web.ent.websafe(formdata.profile)
+      profile = web.net.websafe(formdata.profile)
       regip = web.ctx.ip
       regdate = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
       if user.get_user({'username':username}) is not None:
         return 'user exits'
       else:
-        u = {}
-        u['username'] = username
-        u['password'] = password
-        u['regip'] = regip
-        u['regdate'] = regdate
+        u = {
+            'username' : username,
+            'password' : password,
+            'city' : city,
+            'school': school,
+            'profile':profile,
+            'regip' : regip,
+            'regdate' : regdate,
+          }
         if user.add_user(u):
+          user.signIn({'username':username,'password':password})
           return web.seeother('/start')
         else:
           return u'Register Failed!'
@@ -133,6 +139,11 @@ class team:
     t = {}
     u = get_userinfo()
     return render.team(user=u, team=t)
+
+class home:
+  def GET(self):
+    u = get_userinfo()
+    return render.home(user=u)
 
 
 class get_question:
