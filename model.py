@@ -10,7 +10,9 @@ logging.basicConfig()
 class Base(object):
 
   def __init__(self):
-    self.conn = MongoClient(config.host,config.port).odoup
+    #host = "mongodb://%s:%s@%s" % (config.user, config.pswd, config.host)
+    host = config.host
+    self.conn = MongoClient(host, config.port).odoup
     self.logger = logging.getLogger(__name__ + '.log')
 
 class Question(Base):

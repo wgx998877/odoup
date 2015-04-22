@@ -5,7 +5,8 @@ if sys.platform == 'linux2':
 else:
   host = '115.28.145.36'
 port = 27017
-
+user = 'odoup'
+pswd = 'odoup'
 
 
 NORMAL = 100

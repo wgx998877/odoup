@@ -22,6 +22,7 @@ urls = (
 	'/guide', 'guide',
   '/team' , 'team',
   '/home' , 'home',
+  '/help' , 'help',
   '/get_question', 'get_question',
   '/get_userlist', 'get_userlist',
 )
@@ -133,6 +134,11 @@ class guide:
   def GET(self):
     u = get_userinfo()
     return render.guide(user=u)
+
+class help:
+  def GET(self):
+    u = get_userinfo()
+    return render.help(user=u)
 
 class team:
   def GET(self):
