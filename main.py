@@ -22,6 +22,8 @@ urls = (
 	'/guide', 'guide',
   '/team' , 'team',
   '/home' , 'home',
+  '/review','review',
+  '/list','mylist',
   '/help' , 'help',
   '/get_question', 'get_question',
   '/get_userlist', 'get_userlist',
@@ -151,6 +153,15 @@ class home:
     u = get_userinfo()
     return render.home(user=u)
 
+class mylist:
+  def GET(self):
+    u = get_userinfo()
+    return render.list(user=u)
+
+class review:
+  def GET(self):
+    u = get_userinfo()
+    return render.review(user=u)
 
 class get_question:
   def GET(self):

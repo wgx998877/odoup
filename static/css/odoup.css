@@ -802,7 +802,10 @@ ol.linenums {
   border:1px solid #DDDDDD;
   box-shadow:0 0 10px #F1F1F1;
 }
-
+.job_content{
+  padding: 0 10%;
+  //width: 80%;
+}
 .job_panel {
   cursor: pointer;
   background: #F2F2F2;
